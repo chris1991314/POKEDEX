@@ -107,3 +107,4 @@ def main():
 if __name__ == "__main__":    #  main: Función principal que solicita al usuario el nombre del Pokémon y llama a obtener_datos_pokemon.
     main()
 
+GRACIAS POR EL CURSO MUY BUENO HE APRENDIDO MUCHO Y CONVINADO CON LOS CONOCIMIENTO QUE HE ADQUIRIDO EN ESTE CUATRIMESTRE EN MI UNIVERSIDAD HE COMPLEMENTADO MIS CONOCIMIENTOS SEGUIRE ESFORZANDOME AL MAXIMO. 
