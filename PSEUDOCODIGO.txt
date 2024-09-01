@@ -1,0 +1,42 @@
+Importar las librerías necesarias:
+
+Importar requests # Para realizar solicitudes HTTP a la API de PokeAPI.
+Importar os # Para manejar directorios.
+Importar json # Para guardar los datos en formato JSON.
+Importar pandas # Para crear archivos CSV.
+Importar matplotlib.pyplot y PIL.Image (de Pillow) #Para mostrar imágenes.
+Importar BytesIO # Para manejar datos binarios de la imagen.
+Definir la función obtener_datos_pokemon(nombre_pokemon):
+
+Crear URL: Formar la URL para la API usando el nombre del Pokémon proporcionado por el usuario.
+Realizar solicitud HTTP: Usar requests.get(url) para obtener datos del Pokémon desde la API.
+Verificar respuesta:
+Si la respuesta es exitosa (código de estado 200):
+Extraer datos: Obtener nombre, peso, altura, movimientos, habilidades, tipos, y URL de la imagen del Pokémon desde la respuesta JSON.
+Mostrar datos: Imprimir la información del Pokémon.
+Mostrar imagen: Llamar a la función mostrar_imagen(url_imagen) para mostrar la imagen del Pokémon.
+Guardar datos: Llamar a la función guardar_datos_pokemon(nombre, peso, altura, movimientos, habilidades, tipos, url_imagen) para guardar la información en archivos JSON y CSV.
+Si la respuesta no es exitosa, imprimir un mensaje de error ("Pokémon no encontrado").
+Definir la función mostrar_imagen(url_imagen):
+
+Obtener imagen: Usar requests.get(url_imagen) para descargar la imagen del Pokémon.
+Convertir imagen a formato visualizable: Usar Image.open(BytesIO(respuesta_imagen.content)) para abrir la imagen desde los datos binarios.
+Mostrar imagen: Usar plt.imshow(imagen) para mostrar la imagen y plt.axis('off') para ocultar los ejes. Luego, usar plt.show() para mostrar la ventana emergente con la imagen.
+Definir la función guardar_datos_pokemon(nombre, peso, altura, movimientos, habilidades, tipos, url_imagen):
+
+Crear carpeta "pokedex": Verificar si la carpeta "pokedex" existe, si no, crearla usando os.makedirs('pokedex').
+Crear diccionario con información del Pokémon: Estructurar los datos del Pokémon en un diccionario.
+Guardar en archivo JSON:
+Definir ruta del archivo: Crear la ruta del archivo JSON dentro de la carpeta "pokedex".
+Escribir archivo JSON: Usar json.dump para guardar el diccionario en un archivo JSON.
+Guardar en archivo CSV:
+Crear DataFrame de pandas: Usar pd.DataFrame para estructurar los datos del Pokémon.
+Definir ruta del archivo CSV: Crear la ruta del archivo CSV dentro de la carpeta "pokedex".
+Escribir archivo CSV: Usar df.to_csv para guardar el DataFrame en un archivo CSV.
+Definir la función main():
+
+Solicitar nombre del Pokémon al usuario: Usar input() para que el usuario introduzca el nombre del Pokémon.
+Llamar a obtener_datos_pokemon(nombre_pokemon): Pasar el nombre introducido a la función para iniciar el proceso.
+Ejecutar el programa:
+
+Si el script se ejecuta directamente, llamar a la función main().
